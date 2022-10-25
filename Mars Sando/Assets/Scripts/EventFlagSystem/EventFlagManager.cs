@@ -19,11 +19,8 @@ public class EventFlagManager : MonoBehaviour {
 		}
 	}
 
-	// PRIVATE VARIABLES
 	private Dictionary<string, bool> _flagDict = new Dictionary<string, bool>();
 
-
-	// PUBLIC VARIABLES
 	public string[] flagList;   // Used for creating the list of flags.
 	public event Action<string> onFlagTickTrue;
 

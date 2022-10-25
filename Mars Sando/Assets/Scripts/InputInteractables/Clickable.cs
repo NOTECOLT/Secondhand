@@ -5,32 +5,31 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
 public class Clickable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
-    // Generic MonoBehaviour Class for items that are clickable.
+	// Generic MonoBehaviour Class for items that are clickable.
 	// Stolen from Help Me Find My Doll Code lmao
 
-    // PUBLIC VARIABLES
-    public bool enableClicking = true;
-    public UnityEvent<PointerEventData> OnPointerDownFunction;
-    public UnityEvent<PointerEventData> OnPointerUpFunction;
+	public bool enableClicking = true;
+	public UnityEvent<PointerEventData> OnPointerDownFunction;
+	public UnityEvent<PointerEventData> OnPointerUpFunction;
 
 
-    public virtual void OnPointerDown(PointerEventData eventData) {
-        if (enableClicking)
-            OnPointerDownFunction.Invoke(eventData);
-    }
-    public virtual void OnPointerUp(PointerEventData eventData) {
-        if (enableClicking) {
-            OnPointerUpFunction.Invoke(eventData);
-        }  
-    }
+	public virtual void OnPointerDown(PointerEventData eventData) {
+		if (enableClicking)
+			OnPointerDownFunction.Invoke(eventData);
+	}
+	public virtual void OnPointerUp(PointerEventData eventData) {
+		if (enableClicking) {
+			OnPointerUpFunction.Invoke(eventData);
+		}  
+	}
 
-    public void SetClicking(bool value) {
-        enableClicking = value;
-    }
+	public void SetClicking(bool value) {
+		enableClicking = value;
+	}
 
 
-    // Just For Debugging Purposes
-    public void Message(string msg) {
-        Debug.Log(msg);
-    }
+	// Just For Debugging Purposes
+	public void Message(string msg) {
+		Debug.Log(msg);
+	}
 }

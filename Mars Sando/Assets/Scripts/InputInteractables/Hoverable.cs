@@ -5,31 +5,30 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
 public class Hoverable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-    // PUBLIC VARIABLES
-    public bool enableHovering = true;
-    public bool isHovering = false;
+	public bool enableHovering = true;
+	public bool isHovering = false;
 
-    public UnityEvent<PointerEventData> OnPointerEnterFunction;
-    public UnityEvent<PointerEventData> OnPointerExitFunction;
+	public UnityEvent<PointerEventData> OnPointerEnterFunction;
+	public UnityEvent<PointerEventData> OnPointerExitFunction;
 
-    public virtual void OnPointerEnter(PointerEventData eventData) {
-        if (!enableHovering)
-            return;
+	public virtual void OnPointerEnter(PointerEventData eventData) {
+		if (!enableHovering)
+			return;
 
-        OnPointerEnterFunction.Invoke(eventData);
-        isHovering = true;
-    }
+		OnPointerEnterFunction.Invoke(eventData);
+		isHovering = true;
+	}
 
-    public virtual void OnPointerExit(PointerEventData eventData) {
-        if (!enableHovering)
-            return;
+	public virtual void OnPointerExit(PointerEventData eventData) {
+		if (!enableHovering)
+			return;
 
-        OnPointerExitFunction.Invoke(eventData);
-        isHovering = false;    
-    }
+		OnPointerExitFunction.Invoke(eventData);
+		isHovering = false;    
+	}
 
-    public void SetHovering(bool value) {
-        enableHovering = value;
-        isHovering = false;
-    }
+	public void SetHovering(bool value) {
+		enableHovering = value;
+		isHovering = false;
+	}
 }
