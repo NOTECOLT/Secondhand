@@ -7,6 +7,6 @@ public class DialogueCaller : MonoBehaviour {
     public Dialogue dialogue;
 
     public void CallDialogue() {
-        DialogueManager.Instance.StartDialogue(dialogue);
+        DialogueManager.Instance.StartDialogueAuto(dialogue);
     }
 }

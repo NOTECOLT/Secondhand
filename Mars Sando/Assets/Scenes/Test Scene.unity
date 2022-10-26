@@ -546,8 +546,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - Peeep hole
-    - Peep hole
+    - I am an among us
+    - You are an imposter
+    - FUCKING SUSSY BAKA BITCH
 --- !u!1 &765754210
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca451e54419ee074eb5dc134fa93edde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 0}
+  dialogueBox: {fileID: 2011747662}
 --- !u!1 &1991412534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1073,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2011747662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5665191469699523353, guid: 00c638b81e86f2f4a9883f2c35053a90, type: 3}
+  m_PrefabInstance: {fileID: 5665191469026883159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2011747663 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5665191469699523352, guid: 00c638b81e86f2f4a9883f2c35053a90, type: 3}
