@@ -20,11 +20,10 @@ public class EventFlagManager : MonoBehaviour {
 	}
 
 	private Dictionary<string, bool> _flagDict = new Dictionary<string, bool>();
-
 	public string[] flagList;   // Used for creating the list of flags.
 	public event Action<string> onFlagTickTrue;
 
-	void Start() {
+	private void Start() {
 		// Each flag in flagList gets added to the _flagDict Dictionary.
 		foreach (string entry in flagList) {
 			_flagDict.Add(entry, false);
@@ -43,7 +42,6 @@ public class EventFlagManager : MonoBehaviour {
 		if (onFlagTickTrue == null) {
 			return;
 		}
-		
 
 		onFlagTickTrue(flagName);
 	}

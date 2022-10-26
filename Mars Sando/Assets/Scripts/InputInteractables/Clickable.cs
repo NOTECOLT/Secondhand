@@ -26,10 +26,4 @@ public class Clickable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 	public void SetClicking(bool value) {
 		enableClicking = value;
 	}
-
-
-	// Just For Debugging Purposes
-	public void Message(string msg) {
-		Debug.Log(msg);
-	}
 }
