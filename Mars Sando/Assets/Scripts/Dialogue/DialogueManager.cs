@@ -6,8 +6,8 @@ using TMPro;
 public class DialogueManager : MonoBehaviour {
 	// Singleton class that manages all dialogue in the game
 
-	[SerializeField] private GameObject dialogueBox;
-	private TMP_Text _textObj;
+	public GameObject dialogueBox;
+	public GameObject dialogueCanvas;
 	private Queue<string> _sentenceQueue;
 	private bool _isTyping = false;
 
@@ -25,7 +25,6 @@ public class DialogueManager : MonoBehaviour {
 
 	private void Start() {
 		_sentenceQueue = new Queue<string>();
-		_textObj = dialogueBox.GetComponentInChildren<TMP_Text>();
 	}
 
 	// Automatically writes all sentences in a dialogue object
@@ -44,23 +43,27 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	IEnumerator TypeDialogue(Dialogue dialogue) {
+		GameObject box = Instantiate(dialogueBox, dialogueCanvas.transform);
+		TMP_Text textObj = box.GetComponentInChildren<TMP_Text>();
+
 		while (_sentenceQueue.Count > 0) {
 			_isTyping = true;
 
 			string sentence = _sentenceQueue.Dequeue();
-			yield return StartCoroutine(TypeSentence(sentence));
+			yield return StartCoroutine(TypeSentence(sentence, textObj));
 			yield return new WaitForSeconds(1);
 		}
 
 		_isTyping = false;
+		Destroy(box);
 		yield return null;
 	}
 
-	IEnumerator TypeSentence(string sentence) {
-		_textObj.text = "";
+	IEnumerator TypeSentence(string sentence, TMP_Text textObj) {
+		textObj.text = "";
 
 		foreach(char c in sentence.ToCharArray()) {
-			_textObj.text += c;
+			textObj.text += c;
 			yield return new WaitForSeconds(0.025f);
 		}
 	}
