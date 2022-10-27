@@ -1842,7 +1842,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1548, y: 113}
-  m_SizeDelta: {x: 41, y: 20}
+  m_SizeDelta: {x: 179, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253483777
 MonoBehaviour:
@@ -1911,7 +1911,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7f1eac03f44f9c64cbb6f8ca73c4c1e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caba7449bd0c62444be61cc77d7c5a3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2080,15 +2080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions:
-  - flagChecks: []
-    itemChecks: []
-    dialogue:
-      sentences: []
-    action:
-      m_PersistentCalls:
-        m_Calls: []
-    isOneTime: 0
+  interactions: []
 --- !u!1 &1506310660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,7 +2240,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2553, y: -253}
-  m_SizeDelta: {x: 120, y: 61}
+  m_SizeDelta: {x: 499, y: 263}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1560641586
 MonoBehaviour:
@@ -2529,6 +2521,7 @@ GameObject:
   - component: {fileID: 1794304883}
   - component: {fileID: 1794304882}
   - component: {fileID: 1794304887}
+  - component: {fileID: 1794304888}
   m_Layer: 5
   m_Name: Sando (dirty & torn)
   m_TagString: Untagged
@@ -2653,7 +2646,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
+  interactions:
+  - flagChecks:
+    - flag: sando/phase1
+      value: 0
+    itemChecks: []
+    dialogue:
+      sentences:
+      - I got a dirty & torn sando!
+      - I think I should go clean it up...
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1794304882}
+          m_TargetAssemblyTypeName: InventoryCaller, Assembly-CSharp
+          m_MethodName: CallAddItem
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1794304888}
+          m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
+          m_MethodName: CallEventFlag
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1794304887}
+          m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+          m_MethodName: DestroySelf
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1794304888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794304880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f626b13fafc8e834ca0a1e7d3b9c90d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagName: sando/phase1
 --- !u!1 &1808448445
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,13 +55,19 @@ public class EventFlagManager : MonoBehaviour {
 		return _flagDict[flagName];
 	}
 
-	public bool CheckFlagsList(List<string> flagList) {
-		foreach (string s in flagList) {
-			Debug.Log(s + " " + GetFlagValue(s));
-			if (!GetFlagValue(s))
+	public bool CheckFlags(List<FlagCheck> flagList) {
+		foreach (FlagCheck fc in flagList) {
+			Debug.Log(fc.flag + " " + GetFlagValue(fc.flag));
+			if (!(GetFlagValue(fc.flag) == fc.value))
 				return false;
 		}
 
 		return true;
 	}
+}
+
+[System.Serializable]
+public class FlagCheck {
+	public string flag;
+	public bool value;
 }
