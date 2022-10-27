@@ -10,15 +10,17 @@ public class Clickable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
 	public bool enableClicking = true;
 	public UnityEvent<PointerEventData> OnPointerDownFunction;
-	public UnityEvent<PointerEventData> OnPointerUpFunction;
+	public List<string> OnPointerDownFlagCheck;
 
+	public UnityEvent<PointerEventData> OnPointerUpFunction;
+	public List<string> OnPointerUpFlagCheck;
 
 	public virtual void OnPointerDown(PointerEventData eventData) {
-		if (enableClicking)
+		if (enableClicking && EventFlagManager.Instance.CheckFlagsList(OnPointerDownFlagCheck))
 			OnPointerDownFunction.Invoke(eventData);
 	}
 	public virtual void OnPointerUp(PointerEventData eventData) {
-		if (enableClicking) {
+		if (enableClicking && EventFlagManager.Instance.CheckFlagsList(OnPointerUpFlagCheck)) {
 			OnPointerUpFunction.Invoke(eventData);
 		}  
 	}

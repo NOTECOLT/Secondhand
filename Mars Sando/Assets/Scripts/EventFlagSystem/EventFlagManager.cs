@@ -54,4 +54,14 @@ public class EventFlagManager : MonoBehaviour {
 
 		return _flagDict[flagName];
 	}
+
+	public bool CheckFlagsList(List<string> flagList) {
+		foreach (string s in flagList) {
+			Debug.Log(s + " " + GetFlagValue(s));
+			if (!GetFlagValue(s))
+				return false;
+		}
+
+		return true;
+	}
 }
