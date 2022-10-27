@@ -19,6 +19,9 @@ public class InventoryManager : MonoBehaviour {
 
 	[SerializeField] private List<Item> _inventory = new List<Item>();
 
+	public Transform invGrid;
+	public GameObject itemDisp;
+
 	// Checks to see if inventory has an item, reference by name (if reference by obj, just use .contains())
 	public Item HasItem(string itemName) {
 		foreach (Item i in _inventory) {
@@ -32,8 +35,11 @@ public class InventoryManager : MonoBehaviour {
 	}
 
 	public void AddItem(Item item) {
+		if (_inventory.Contains(item))
+			return;
+
 		_inventory.Add(item);
-		Debug.Log(_inventory);
+		AddDisplay(item);
 	}
 
 	// overload for reference by item name
@@ -61,5 +67,10 @@ public class InventoryManager : MonoBehaviour {
 
 	public void ClearInventory() {
 		_inventory.Clear();
+	}
+
+	private void AddDisplay(Item item) {
+		GameObject iDisp = Instantiate(itemDisp, invGrid);
+		iDisp.GetComponent<ItemDisplay>().SetItem(item);
 	}
 }
