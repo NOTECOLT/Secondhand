@@ -9,6 +9,7 @@ public class ItemDisplay : MonoBehaviour {
 
     public void SetItem(Item i) {
         item = i;
+        gameObject.name = i.itemName;
         _itemImg.sprite = i.sprite;
     }
 }

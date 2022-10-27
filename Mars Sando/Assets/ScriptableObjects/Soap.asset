@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Soap
   m_EditorClassIdentifier: 
   itemName: Soap
-  sprite: {fileID: 21300000, guid: c630c78cada0b644798a8cc858642679, type: 3}
+  sprite: {fileID: 21300000, guid: 777d33ef63dd00643b348ffe368ff267, type: 3}
+  isKeyItem: 0

@@ -11,7 +11,6 @@ public class Clickable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 	public bool enableClicking = true;
 	public UnityEvent<PointerEventData> OnPointerDownFunction;
 	public List<string> OnPointerDownFlagCheck;
-
 	public UnityEvent<PointerEventData> OnPointerUpFunction;
 	public List<string> OnPointerUpFlagCheck;
 
