@@ -34,6 +34,13 @@ public class InventoryManager : MonoBehaviour {
 		return null; 
 	}
 
+	public bool HasItems(List<Item> items) {
+		foreach(Item i in items) {
+			if (!_inventory.Contains(i)) return false;
+		}
+		return true;
+	}
+
 	public void AddItem(Item item) {
 		if (_inventory.Contains(item))
 			return;

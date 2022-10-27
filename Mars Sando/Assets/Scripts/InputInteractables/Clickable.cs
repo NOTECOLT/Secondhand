@@ -10,18 +10,23 @@ public class Clickable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 
 	public bool enableClicking = true;
 	public UnityEvent<PointerEventData> OnPointerDownFunction;
-	public List<string> OnPointerDownFlagCheck;
 	public UnityEvent<PointerEventData> OnPointerUpFunction;
-	public List<string> OnPointerUpFlagCheck;
 
 	public virtual void OnPointerDown(PointerEventData eventData) {
-		if (enableClicking && EventFlagManager.Instance.CheckFlagsList(OnPointerDownFlagCheck))
-			OnPointerDownFunction.Invoke(eventData);
+		if (!enableClicking) return;
+
+		OnPointerDownFunction.Invoke(eventData);
+		// if (gameObject.GetComponent<Interactable>() != null)
+		// 	gameObject.GetComponent<Interactable>().OnClick();
 	}
 	public virtual void OnPointerUp(PointerEventData eventData) {
-		if (enableClicking && EventFlagManager.Instance.CheckFlagsList(OnPointerUpFlagCheck)) {
-			OnPointerUpFunction.Invoke(eventData);
-		}  
+		if (!enableClicking) return;
+		
+		OnPointerUpFunction.Invoke(eventData);
+		if (gameObject.GetComponent<Interactable>() != null)		
+			gameObject.GetComponent<Interactable>().OnClick();
+		// When an Interactable.cs component is attached, the OnClick function will play, and all
+		// interactable logic will feed thru there
 	}
 
 	public void SetClicking(bool value) {
