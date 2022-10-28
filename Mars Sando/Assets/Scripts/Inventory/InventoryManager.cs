@@ -34,9 +34,17 @@ public class InventoryManager : MonoBehaviour {
 		return null; 
 	}
 
-	public bool HasItems(List<Item> items) {
-		foreach(Item i in items) {
-			if (!_inventory.Contains(i)) return false;
+	// public bool HasItems(List<Item> items) {
+	// 	foreach(Item i in items) {
+	// 		if (!_inventory.Contains(i)) return false;
+	// 	}
+	// 	return true;
+	// }
+
+	// Difference between ItemCheck & HasItems: Item Check also checks whether an item is absent or present in the inv
+	public bool CheckItems(List<ItemCheck> items) {
+		foreach(ItemCheck ic in items) {
+			if (!(_inventory.Contains(ic.item) == ic.check)) return false;
 		}
 		return true;
 	}
@@ -64,12 +72,13 @@ public class InventoryManager : MonoBehaviour {
 
 	// overload for reference by item class
 	public void RemoveItem(Item item) {
-		if (_inventory.Contains(item)) {
-			Debug.Log("No " + item.name + "in inventory.");
+		if (!_inventory.Contains(item)) {
+			Debug.Log("No " + item.name + " in inventory.");
 			return;
 		}
 
 		_inventory.Remove(item);
+		RemoveDisplay(item);
 	}
 
 	public void ClearInventory() {
@@ -80,4 +89,23 @@ public class InventoryManager : MonoBehaviour {
 		GameObject iDisp = Instantiate(itemDisp, invGrid);
 		iDisp.GetComponent<ItemDisplay>().SetItem(item);
 	}
+
+	private void RemoveDisplay(Item item) {
+		GameObject itemToRemove = null;
+		foreach(Transform t in invGrid) {
+			if (t.gameObject.GetComponent<ItemDisplay>().item == item) {
+				itemToRemove = t.gameObject;
+				break;
+			}
+		}
+
+		if (itemToRemove != null)
+			Destroy(itemToRemove);
+	}
+}
+
+[System.Serializable]
+public class ItemCheck {
+	public Item item;
+	public bool check;
 }

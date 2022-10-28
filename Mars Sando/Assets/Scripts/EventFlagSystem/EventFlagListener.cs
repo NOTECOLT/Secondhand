@@ -13,15 +13,23 @@ public class EventFlagListener : MonoBehaviour {
 
 	public UnityEvent FlagFunction;
 	public string flagNameRef;
+	public List<FlagCheck> flagChecks;
 
 	private void OnFlagTick(string flagName) {
 		if (flagName == flagNameRef) {
-			print(flagName + " event received by " + gameObject.name);
-			FlagFunction.Invoke();
-		} 
+			if (flagChecks.Count > 0) {
+				if (EventFlagManager.Instance.CheckFlags(flagChecks)) {
+					print(flagName + " event received by " + gameObject.name);
+					FlagFunction.Invoke();					
+				}
+			} else {
+				print(flagName + " event received by " + gameObject.name);
+				FlagFunction.Invoke();
+			}
+		}
 	}
 
-	void OnDstroy() {
+	void OnDestroy() {
 		EventFlagManager.Instance.onFlagTickTrue -= OnFlagTick;
 	}
 }

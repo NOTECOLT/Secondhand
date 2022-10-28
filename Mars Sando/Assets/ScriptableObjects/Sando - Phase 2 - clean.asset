@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9056ad8e2ca389041b5d8cab7e31a2f1, type: 3}
-  m_Name: Sando - Phase 1
+  m_Name: Sando - Phase 2 - clean
   m_EditorClassIdentifier: 
-  itemName: Dirty & Torn Sando
-  sprite: {fileID: 21300000, guid: 598e23c95cb77444a81748514774a353, type: 3}
+  itemName: Torn Sando
+  sprite: {fileID: 21300000, guid: 7ada29d0af1da4e47a357c075df716ac, type: 3}
   isKeyItem: 1

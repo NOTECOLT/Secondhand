@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Interactable : MonoBehaviour {
 	public List<Interaction> interactions;
@@ -11,7 +12,7 @@ public class Interactable : MonoBehaviour {
 	public void OnClick() {
 		for (int i = 0; i < interactions.Count; i++) {
 			if (EventFlagManager.Instance.CheckFlags(interactions[i].flagChecks) &&
-				InventoryManager.Instance.HasItems(interactions[i].itemChecks)) {
+				InventoryManager.Instance.CheckItems(interactions[i].itemChecks)) {
 					
 				if (interactions[i].dialogue != null && GetComponent<DialogueCaller>() != null)
 					GetComponent<DialogueCaller>().CallDialogue(interactions[i].dialogue);
@@ -31,8 +32,8 @@ public class Interactable : MonoBehaviour {
 		return;
 	}
 
-	public void DestroySelf() {
-		Destroy(gameObject);
+	public void ChangeSprite(Sprite sprite) {
+		GetComponent<Image>().sprite = sprite;
 	}
 }
 
@@ -40,7 +41,7 @@ public class Interactable : MonoBehaviour {
 public class Interaction {
 	// An interaction checks for the appropriate flags & items before displaying dialogue & doing actions
 	public List<FlagCheck> flagChecks;
-	public List<Item> itemChecks;
+	public List<ItemCheck> itemChecks;
 	public Dialogue dialogue;
 	public UnityEvent action;
 	// public bool isOneTime = false;
