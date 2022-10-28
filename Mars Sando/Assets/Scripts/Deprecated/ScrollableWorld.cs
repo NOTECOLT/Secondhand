@@ -8,11 +8,13 @@ public class ScrollableWorld : Hoverable {
 	public GameObject worldObj;
 	public bool scrollLeft = false;
 	public int scrollSpeed = 200;
-
-
+	public GameObject button;
+	public Sprite altSprite;
+	private Sprite _ogSprite;
 	private RectTransform _wrldTrans;
 	private void Start() {
 		_wrldTrans = worldObj.GetComponent<RectTransform>();
+		_ogSprite = button.GetComponent<Image>().sprite;
 	}
 
 	private void Update() {
@@ -21,12 +23,19 @@ public class ScrollableWorld : Hoverable {
 
 		if (isHovering) {
 			if (scrollLeft) {
-				if (leftBound < 0)
+				if (leftBound < 0) 
 					_wrldTrans.position += new Vector3(scrollSpeed, 0, 0) * Time.deltaTime;
 			} else {
 				if (rightBound > 0) 
 					_wrldTrans.position += new Vector3(-scrollSpeed, 0, 0) * Time.deltaTime;
 			}
+			button.GetComponent<Image>().sprite = altSprite;
+		} else {
+			button.GetComponent<Image>().sprite = _ogSprite;
 		}
+	}
+
+	public void ToRepairRoom() {
+		GameSceneManager.Instance.SetState(GameState.RepairRoom);
 	}
 }
