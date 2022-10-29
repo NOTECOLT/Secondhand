@@ -16,11 +16,14 @@ public class ItemDisplay : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
 
     private void Update() {
-        if (GetComponent<Hoverable>().isHovering || itemSelected) {
-            _itemImg.sprite = item.selSprite;
-        } else {
-            _itemImg.sprite = item.sprite;
+        if (item != null) {
+            if (GetComponent<Hoverable>().isHovering || itemSelected) {
+                _itemImg.sprite = item.selSprite;
+            } else {
+                _itemImg.sprite = item.sprite;
+            }
         }
+
     }
 
 

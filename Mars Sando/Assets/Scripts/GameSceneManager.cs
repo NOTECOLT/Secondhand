@@ -24,8 +24,7 @@ public class GameSceneManager : MonoBehaviour {
 	public GameObject washingMinigameCanvas;
 
 	private void Start() {
-		state = GameState.MainRoom;
-		mainRoomCanvas.SetActive(true);
+		SetState(GameState.MainRoom);
 	}
 
 	public void SetState(GameState s) {

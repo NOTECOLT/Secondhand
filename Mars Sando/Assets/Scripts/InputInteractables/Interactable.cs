@@ -7,21 +7,18 @@ using UnityEngine.UI;
 public class Interactable : MonoBehaviour {
 	public List<Interaction> interactions;
 
-
 	// When arranging Interactions, put later-game interactions to the front
 	public void OnClick() {
 		for (int i = 0; i < interactions.Count; i++) {
 			if (EventFlagManager.Instance.CheckFlags(interactions[i].flagChecks) &&
 				InventoryManager.Instance.CheckItems(interactions[i].itemChecks)) {
+
+				if (interactions[i].useItem != null && InventoryManager.Instance.selectedItem != interactions[i].useItem)
+					continue;
 					
 				if (interactions[i].dialogue != null && GetComponent<DialogueCaller>() != null)
 					GetComponent<DialogueCaller>().CallDialogue(interactions[i].dialogue);
 				interactions[i].action.Invoke();
-
-				// if (interactions[i].isOneTime) {
-				// 	interactions.Remove(interactions[i]);
-				// 	i--;
-				// }
 
 				return;
 			}
@@ -35,6 +32,10 @@ public class Interactable : MonoBehaviour {
 	public void ChangeSprite(Sprite sprite) {
 		GetComponent<Image>().sprite = sprite;
 	}
+
+	public void DestroySelf() {
+		Destroy(gameObject);
+	}
 }
 
 [System.Serializable]
@@ -42,7 +43,7 @@ public class Interaction {
 	// An interaction checks for the appropriate flags & items before displaying dialogue & doing actions
 	public List<FlagCheck> flagChecks;
 	public List<ItemCheck> itemChecks;
+	public Item useItem = null;
 	public Dialogue dialogue;
 	public UnityEvent action;
-	// public bool isOneTime = false;
 }

@@ -21,9 +21,22 @@ public class InventoryManager : MonoBehaviour {
 	public Item selectedItem = null;
 	public Transform invGrid;
 	public GameObject itemDisp;
+	public GameObject dragItemObj;
+
+	private void Update() {
+		if (selectedItem != null)
+			dragItemObj.transform.position = Input.mousePosition;
+	}
 
 	public void SetSelectedItem(Item item = null) {
 		selectedItem = item;
+
+		if (item != null) {
+			dragItemObj.SetActive(true);
+			dragItemObj.GetComponent<ItemDisplay>().SetItem(selectedItem);	
+		} else {
+			dragItemObj.SetActive(false);
+		}
 	}
 
 	// Checks to see if inventory has an item, reference by name (if reference by obj, just use .contains())
