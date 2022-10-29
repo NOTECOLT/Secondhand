@@ -38,6 +38,7 @@ public class ScrollRoomRight : Hoverable {
 	}
 
 	public void ToRepairRoom() {
+		isHovering = false;
 		GameSceneManager.Instance.SetState(GameState.RepairRoom);
 	}
 }
