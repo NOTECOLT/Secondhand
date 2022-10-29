@@ -10,4 +10,8 @@ public class DialogueCaller : MonoBehaviour {
         if (dialogue == null) dialogue = defaultDialogue;
         DialogueManager.Instance.StartDialogueAuto(dialogue);
     }
+
+    public void CallDialogue() {
+        DialogueManager.Instance.StartDialogueAuto(defaultDialogue);
+    }
 }

@@ -515,6 +515,8 @@ GameObject:
   - component: {fileID: 130265808}
   - component: {fileID: 130265807}
   - component: {fileID: 130265809}
+  - component: {fileID: 130265810}
+  - component: {fileID: 130265811}
   m_Layer: 5
   m_Name: Base Sando
   m_TagString: Untagged
@@ -593,6 +595,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &130265810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130265805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd94b9734a055f47886327fbf6751f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onWashMGDoneDialogue:
+    sentences:
+    - All clean!
+  dirtPatches: {fileID: 1153309449}
+  phase3: {fileID: 21300000, guid: 71d5483d841875f4fb2df2275b14da84, type: 3}
+--- !u!114 &130265811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130265805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue:
+    sentences:
+    - I don't think I need that right now...
 --- !u!1 &138282045
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &288047980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1608,7 +1642,6 @@ GameObject:
   m_Component:
   - component: {fileID: 474544635}
   - component: {fileID: 474544634}
-  - component: {fileID: 474544636}
   m_Layer: 0
   m_Name: Sando/Phase2/Clean Listener
   m_TagString: Untagged
@@ -1630,31 +1663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlagFunction:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 474544636}
-        m_TargetAssemblyTypeName: InventoryCaller, Assembly-CSharp
-        m_MethodName: UseItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b133e831a55eda2449cfa5633e5e9614, type: 2}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 474544636}
-        m_TargetAssemblyTypeName: InventoryCaller, Assembly-CSharp
-        m_MethodName: AddItem
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   flagNameRef: sando/phase2/clean
   flagChecks:
   - flag: sando/phase2/sewed
@@ -1671,21 +1680,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1676820762}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &474544636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474544633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed193116206b6f4ba000c134f93af32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 2866a90f1bc2aeb4e86e06644c51e7a6, type: 2}
 --- !u!1 &502099615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +2143,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 130265810}
+          m_TargetAssemblyTypeName: SandoMinigame, Assembly-CSharp
+          m_MethodName: CheckWashingMGStatus
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &665422746
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,6 +2449,18 @@ MonoBehaviour:
         - m_Target: {fileID: 695321928}
           m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
           m_MethodName: DestroySelf
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 130265810}
+          m_TargetAssemblyTypeName: SandoMinigame, Assembly-CSharp
+          m_MethodName: CheckWashingMGStatus
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3295,7 +3315,7 @@ MonoBehaviour:
     useItem: {fileID: 0}
     dialogue:
       sentences:
-      - I got some soap!
+      - "Hayyyy,,, I even left my magic soap here, I should take better care of it\u2026"
     action:
       m_PersistentCalls:
         m_Calls:
@@ -3575,7 +3595,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1676820762}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1094632722
 MonoBehaviour:
@@ -3739,6 +3759,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1160795525}
           m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
           m_MethodName: DestroySelf
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 130265810}
+          m_TargetAssemblyTypeName: SandoMinigame, Assembly-CSharp
+          m_MethodName: CheckWashingMGStatus
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4426,7 +4458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1676820762}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1334636191
 MonoBehaviour:
@@ -4748,6 +4780,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 130265810}
+          m_TargetAssemblyTypeName: SandoMinigame, Assembly-CSharp
+          m_MethodName: CheckWashingMGStatus
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1345669638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4975,11 +5019,6 @@ GameObject:
   - component: {fileID: 1404164344}
   - component: {fileID: 1404164351}
   - component: {fileID: 1404164350}
-  - component: {fileID: 1404164349}
-  - component: {fileID: 1404164348}
-  - component: {fileID: 1404164347}
-  - component: {fileID: 1404164346}
-  - component: {fileID: 1404164345}
   m_Layer: 5
   m_Name: Batsa
   m_TagString: Untagged
@@ -5006,206 +5045,6 @@ RectTransform:
   m_AnchoredPosition: {x: 650, y: -265}
   m_SizeDelta: {x: 499, y: 263}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1404164345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404164343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f626b13fafc8e834ca0a1e7d3b9c90d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagName: sando/phase2/clean
---- !u!114 &1404164346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404164343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactions:
-  - flagChecks:
-    - flag: sando/phase1
-      value: 1
-    itemChecks:
-    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
-      check: 0
-    useItem: {fileID: 0}
-    dialogue:
-      sentences:
-      - If only I had soap to fill this basin...
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - flagChecks:
-    - flag: sando/phase1
-      value: 1
-    itemChecks:
-    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
-      check: 1
-    useItem: {fileID: 0}
-    dialogue:
-      sentences:
-      - Time to fill up this basin with soap!
-      - ... *wash* *wash* ...
-      - Nice, now this sando is all clean.
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1404164347}
-          m_TargetAssemblyTypeName: InventoryCaller, Assembly-CSharp
-          m_MethodName: UseItem
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
-            m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1404164346}
-          m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-          m_MethodName: ChangeSprite
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: cd8f4857b0ee52e41b406afc9c041cc7, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1404164345}
-          m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
-          m_MethodName: CallEventFlag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - flagChecks:
-    - flag: sando/phase1
-      value: 1
-    itemChecks:
-    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
-      check: 1
-    useItem: {fileID: 0}
-    dialogue:
-      sentences:
-      - Time to fill up this basin with soap!
-      - ... *wash* *wash* ...
-      - Nice, now this sando is all clean.
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1404164347}
-          m_TargetAssemblyTypeName: InventoryCaller, Assembly-CSharp
-          m_MethodName: UseItem
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
-            m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1404164346}
-          m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-          m_MethodName: ChangeSprite
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 21300000, guid: cd8f4857b0ee52e41b406afc9c041cc7, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1404164345}
-          m_TargetAssemblyTypeName: EventFlagCaller, Assembly-CSharp
-          m_MethodName: CallEventFlag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1404164347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404164343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed193116206b6f4ba000c134f93af32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
---- !u!114 &1404164348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404164343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultDialogue:
-    sentences:
-    - I don't think I need that right now...
---- !u!114 &1404164349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1404164343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0267409a05e0046914bf6543fc0ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableClicking: 1
-  OnPointerDownFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerUpFunction:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1404164350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5956,6 +5795,73 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1619187094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619187095}
+  - component: {fileID: 1619187097}
+  - component: {fileID: 1619187096}
+  m_Layer: 0
+  m_Name: Sando/Phase1 Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1619187095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619187094}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1676820762}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1619187096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619187094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue:
+    sentences:
+    - "Hmmm\u2026 this should be the new arrival. It should look good once I fix
+      it up."
+    - "Let\u2019s see\u2026 I\u2019ll need my magic soap, and for the tears, all
+      I need are some threads since I\u2019ve got my sewing kit here."
+--- !u!114 &1619187097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619187094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef5cf2f23ae2b8498451dc4f96006c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlagFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  flagNameRef: sando/phase1
+  flagChecks: []
 --- !u!1 &1647022834
 GameObject:
   m_ObjectHideFlags: 0
@@ -6083,6 +5989,7 @@ Transform:
   m_LocalPosition: {x: 1378.594, y: 419.41058, z: -2457.2979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1619187095}
   - {fileID: 474544635}
   - {fileID: 1334636190}
   - {fileID: 1094632721}
@@ -6108,7 +6015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1714011594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6284,7 +6191,7 @@ MonoBehaviour:
     useItem: {fileID: 0}
     dialogue:
       sentences:
-      - I can use this thread here to sew up the sando~
+      - Ughhh, why is it here? When I have become so messy?
     action:
       m_PersistentCalls:
         m_Calls:
@@ -6529,6 +6436,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1840947498}
           m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
           m_MethodName: DestroySelf
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 130265810}
+          m_TargetAssemblyTypeName: SandoMinigame, Assembly-CSharp
+          m_MethodName: CheckWashingMGStatus
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7231,11 +7150,6 @@ GameObject:
   - component: {fileID: 2017699141}
   - component: {fileID: 2017699148}
   - component: {fileID: 2017699147}
-  - component: {fileID: 2017699146}
-  - component: {fileID: 2017699145}
-  - component: {fileID: 2017699144}
-  - component: {fileID: 2017699143}
-  - component: {fileID: 2017699142}
   m_Layer: 5
   m_Name: Sewing Kit
   m_TagString: Untagged
@@ -7262,92 +7176,6 @@ RectTransform:
   m_AnchoredPosition: {x: -180, y: 77.5}
   m_SizeDelta: {x: 179, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2017699142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017699140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed193116206b6f4ba000c134f93af32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
---- !u!114 &2017699143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017699140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f626b13fafc8e834ca0a1e7d3b9c90d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flagName: sando/phase2/sewed
---- !u!114 &2017699144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017699140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactions:
-  - flagChecks:
-    - flag: sando/phase1
-      value: 1
-    itemChecks:
-    - item: {fileID: 11400000, guid: b3ee6594d82cb5b4ab35f2b519b88170, type: 2}
-      check: 0
-    useItem: {fileID: 0}
-    dialogue:
-      sentences:
-      - If only I had some thread to use with this kit...
-    action:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &2017699145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017699140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultDialogue:
-    sentences:
-    - I don't think I need that right now...
---- !u!114 &2017699146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017699140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0267409a05e0046914bf6543fc0ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableClicking: 1
-  OnPointerDownFunction:
-    m_PersistentCalls:
-      m_Calls: []
-  OnPointerUpFunction:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2017699147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7416,7 +7244,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1676820762}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2056179256
 MonoBehaviour:
@@ -7715,6 +7543,18 @@ MonoBehaviour:
         - m_Target: {fileID: 2123829482}
           m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
           m_MethodName: DestroySelf
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 130265810}
+          m_TargetAssemblyTypeName: SandoMinigame, Assembly-CSharp
+          m_MethodName: CheckWashingMGStatus
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

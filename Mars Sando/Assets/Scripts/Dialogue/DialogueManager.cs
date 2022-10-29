@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<string> _sentenceQueue;
 	private bool _isTyping = false;
 
+	public float typingSpeed = 0.025f;
+
 	// SINGLETON PATTERN
 	private static DialogueManager _instance;
 	public static DialogueManager Instance { get {return _instance; } }
@@ -51,7 +53,7 @@ public class DialogueManager : MonoBehaviour {
 
 			string sentence = _sentenceQueue.Dequeue();
 			yield return StartCoroutine(TypeSentence(sentence, textObj));
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(Mathf.Clamp(sentence.Length / 50, 1.0f, 10.0f));
 		}
 
 		_isTyping = false;
@@ -64,7 +66,18 @@ public class DialogueManager : MonoBehaviour {
 
 		foreach(char c in sentence.ToCharArray()) {
 			textObj.text += c;
-			yield return new WaitForSeconds(0.025f);
+
+			switch (c) {
+				case ',':
+					yield return new WaitForSeconds(typingSpeed * 30);
+					break;
+				case '.':
+					yield return new WaitForSeconds(typingSpeed * 40);
+					break;
+				default:
+					yield return new WaitForSeconds(typingSpeed);
+					break;
+			}	
 		}
 	}
 }

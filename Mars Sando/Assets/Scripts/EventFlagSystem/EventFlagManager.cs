@@ -36,6 +36,8 @@ public class EventFlagManager : MonoBehaviour {
 			return;
 		}
 
+		if (_flagDict[flagName] == true) return;
+
 		print("Flag Called: " + flagName);   
 		_flagDict[flagName] = true;
 
@@ -57,7 +59,7 @@ public class EventFlagManager : MonoBehaviour {
 
 	public bool CheckFlags(List<FlagCheck> flagList) {
 		foreach (FlagCheck fc in flagList) {
-			Debug.Log(fc.flag + " " + GetFlagValue(fc.flag));
+			//Debug.Log(fc.flag + " " + GetFlagValue(fc.flag));
 			if (!(GetFlagValue(fc.flag) == fc.value))
 				return false;
 		}
