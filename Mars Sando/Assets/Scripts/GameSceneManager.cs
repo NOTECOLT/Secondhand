@@ -21,6 +21,7 @@ public class GameSceneManager : MonoBehaviour {
 	public GameObject mainRoomScroll;
 	public GameObject repairRoomCanvas;
 	public GameObject repairRoomScroll;
+	public GameObject washingMinigameCanvas;
 
 	private void Start() {
 		state = GameState.MainRoom;
@@ -37,6 +38,8 @@ public class GameSceneManager : MonoBehaviour {
 
 				repairRoomCanvas.SetActive(false);
 				repairRoomScroll.SetActive(false);
+
+				washingMinigameCanvas.SetActive(false);
 				break;
 			case GameState.RepairRoom:
 				mainRoomCanvas.SetActive(false);
@@ -44,6 +47,17 @@ public class GameSceneManager : MonoBehaviour {
 
 				repairRoomCanvas.SetActive(true);
 				repairRoomScroll.SetActive(true);
+
+				washingMinigameCanvas.SetActive(false);
+				break;
+			case GameState.WashMinigame:
+				mainRoomCanvas.SetActive(false);
+				mainRoomScroll.SetActive(false);
+				
+				repairRoomCanvas.SetActive(false);
+				repairRoomScroll.SetActive(false);
+
+				washingMinigameCanvas.SetActive(true);
 				break;
 			default:
 				return;
@@ -54,5 +68,6 @@ public class GameSceneManager : MonoBehaviour {
 [System.Serializable]
 public enum GameState {
 	MainRoom,
-	RepairRoom
+	RepairRoom,
+	WashMinigame
 }

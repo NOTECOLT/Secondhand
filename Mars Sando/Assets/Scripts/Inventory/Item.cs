@@ -7,5 +7,6 @@ using UnityEngine.Sprites;
 public class Item : ScriptableObject {
 	public string itemName;
 	public Sprite sprite;
+	public Sprite selSprite;
 	public bool isKeyItem = false;
 }

@@ -18,9 +18,13 @@ public class InventoryManager : MonoBehaviour {
 	}
 
 	[SerializeField] private List<Item> _inventory = new List<Item>();
-
+	public Item selectedItem = null;
 	public Transform invGrid;
 	public GameObject itemDisp;
+
+	public void SetSelectedItem(Item item = null) {
+		selectedItem = item;
+	}
 
 	// Checks to see if inventory has an item, reference by name (if reference by obj, just use .contains())
 	public Item HasItem(string itemName) {
@@ -33,13 +37,6 @@ public class InventoryManager : MonoBehaviour {
 		Debug.Log("No " + itemName + "in inventory.");
 		return null; 
 	}
-
-	// public bool HasItems(List<Item> items) {
-	// 	foreach(Item i in items) {
-	// 		if (!_inventory.Contains(i)) return false;
-	// 	}
-	// 	return true;
-	// }
 
 	// Difference between ItemCheck & HasItems: Item Check also checks whether an item is absent or present in the inv
 	public bool CheckItems(List<ItemCheck> items) {
@@ -109,3 +106,10 @@ public class ItemCheck {
 	public Item item;
 	public bool check;
 }
+
+	// public bool HasItems(List<Item> items) {
+	// 	foreach(Item i in items) {
+	// 		if (!_inventory.Contains(i)) return false;
+	// 	}
+	// 	return true;
+	// }
