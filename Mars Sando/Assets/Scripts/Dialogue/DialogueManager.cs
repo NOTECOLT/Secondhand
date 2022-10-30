@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour {
 
 			string sentence = _sentenceQueue.Dequeue();
 			yield return StartCoroutine(TypeSentence(sentence, textObj));
-			yield return new WaitForSeconds(Mathf.Clamp(sentence.Length / 60, 0.75f, 10.0f));
+			yield return new WaitForSeconds(Mathf.Clamp(sentence.Length / 60, 1.0f, 10.0f));
 		}
 
 		box.GetComponent<Animator>().SetTrigger("Slide Down");

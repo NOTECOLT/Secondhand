@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour {
 				if (interactions[i].useItem != null && InventoryManager.Instance.selectedItem != interactions[i].useItem)
 					continue;
 					
-				if (interactions[i].dialogue != null && GetComponent<DialogueCaller>() != null)
+				if (interactions[i].dialogue.sentences.Length != 0 && GetComponent<DialogueCaller>() != null)
 					GetComponent<DialogueCaller>().CallDialogue(interactions[i].dialogue);
 				interactions[i].action.Invoke();
 
