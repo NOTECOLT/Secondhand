@@ -53,11 +53,13 @@ public class DialogueManager : MonoBehaviour {
 
 			string sentence = _sentenceQueue.Dequeue();
 			yield return StartCoroutine(TypeSentence(sentence, textObj));
-			yield return new WaitForSeconds(Mathf.Clamp(sentence.Length / 50, 1.0f, 10.0f));
+			yield return new WaitForSeconds(Mathf.Clamp(sentence.Length / 60, 0.75f, 10.0f));
 		}
 
+		box.GetComponent<Animator>().SetTrigger("Slide Down");
+
 		_isTyping = false;
-		Destroy(box);
+
 		yield return null;
 	}
 
@@ -69,10 +71,10 @@ public class DialogueManager : MonoBehaviour {
 
 			switch (c) {
 				case ',':
-					yield return new WaitForSeconds(typingSpeed * 30);
+					yield return new WaitForSeconds(typingSpeed * 20);
 					break;
 				case '.':
-					yield return new WaitForSeconds(typingSpeed * 40);
+					yield return new WaitForSeconds(typingSpeed * 30);
 					break;
 				default:
 					yield return new WaitForSeconds(typingSpeed);

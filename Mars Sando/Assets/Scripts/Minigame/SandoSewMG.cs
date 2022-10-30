@@ -15,8 +15,6 @@ public class SandoSewMG : MonoBehaviour {
         if (_patchedCount == 0) {
             EventFlagManager.Instance.FlagTickTrue("sando/phase2/sewed");
             GetComponent<DialogueCaller>().CallDialogue(onSewMGDoneDialogue);
-            
-            //GetComponent<Image>().sprite = phase3;
         }
     }
 }
