@@ -65,9 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec
-    nibh eget turpis facilisis dictum. Nunc consectetur arcu ligula, at laoreet leo
-    posuere sit amet.
+  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+    nec nibh eget turpis facilisis dictum. Nunc consectetur arcu ligula, '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6392f4a747895e04fbf85f3a7853656f, type: 2}
   m_sharedMaterial: {fileID: 1721836408014613937, guid: 6392f4a747895e04fbf85f3a7853656f, type: 2}
@@ -94,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

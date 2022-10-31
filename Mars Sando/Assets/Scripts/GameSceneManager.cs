@@ -16,15 +16,24 @@ public class GameSceneManager : MonoBehaviour {
 	}
 
 	public GameState state;
-
 	public GameObject mainRoomCanvas;
 	public GameObject mainRoomScroll;
 	public GameObject repairRoomCanvas;
 	public GameObject repairRoomScroll;
 	public GameObject washingMinigameCanvas;
 
+
+	public bool gamePaused = false;
+	public GameObject pauseMenu;
+
 	private void Start() {
 		SetState(GameState.MainRoom);
+		TogglePauseGame(false);
+	}
+
+	private void Update() {
+		if (Input.GetKeyUp(KeyCode.Escape))
+			TogglePauseGame(!gamePaused);
 	}
 
 	public void SetState(GameState s) {
@@ -61,6 +70,11 @@ public class GameSceneManager : MonoBehaviour {
 			default:
 				return;
 		}
+	}
+
+	public void TogglePauseGame(bool state) {
+		pauseMenu.SetActive(state);
+		gamePaused = state;
 	}
 }
 

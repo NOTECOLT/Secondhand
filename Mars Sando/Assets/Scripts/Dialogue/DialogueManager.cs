@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour {
 	// Automatically writes all sentences in a dialogue object
 	public void StartDialogueAuto(Dialogue dialogue) {
 		// If dialogue is currently being typed, nothing should happen
-		if (_isTyping)
+		if (_isTyping || dialogue == null || dialogue.sentences.Length == 0)
 			return;
 
 		// Queues all the sentences in a dialogue obj
