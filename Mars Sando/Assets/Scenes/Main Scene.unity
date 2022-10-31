@@ -230,6 +230,10 @@ GameObject:
   - component: {fileID: 69963301}
   - component: {fileID: 69963300}
   - component: {fileID: 69963299}
+  - component: {fileID: 69963305}
+  - component: {fileID: 69963304}
+  - component: {fileID: 69963303}
+  - component: {fileID: 69963302}
   m_Layer: 5
   m_Name: Box4 Front
   m_TagString: Untagged
@@ -313,6 +317,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69963297}
   m_CullTransparentMesh: 1
+--- !u!114 &69963302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69963297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue:
+    sentences:
+    - Just a box...
+--- !u!114 &69963303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69963297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - flagChecks:
+    - flag: sando/phase1
+      value: 1
+    itemChecks:
+    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
+      check: 0
+    - item: {fileID: 11400000, guid: b3ee6594d82cb5b4ab35f2b519b88170, type: 2}
+      check: 0
+    useItem: {fileID: 0}
+    dialogue:
+      sentences:
+      - Nothing to see.
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &69963304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69963297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &69963305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69963297}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &118246765
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +407,10 @@ GameObject:
   - component: {fileID: 118246769}
   - component: {fileID: 118246768}
   - component: {fileID: 118246767}
+  - component: {fileID: 118246770}
+  - component: {fileID: 118246773}
+  - component: {fileID: 118246772}
+  - component: {fileID: 118246771}
   m_Layer: 5
   m_Name: Box3
   m_TagString: Untagged
@@ -344,11 +430,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868853214}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -574.00024, y: -168.00002}
+  m_AnchoredPosition: {x: -641, y: -168.00002}
   m_SizeDelta: {x: 189, y: 159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118246767
@@ -408,6 +494,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118246765}
   m_CullTransparentMesh: 1
+--- !u!114 &118246770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118246765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue:
+    sentences:
+    - Empty Box..
+--- !u!114 &118246771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118246765}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &118246772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118246765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &118246773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118246765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - flagChecks:
+    - flag: sando/phase1
+      value: 1
+    itemChecks:
+    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
+      check: 0
+    - item: {fileID: 11400000, guid: b3ee6594d82cb5b4ab35f2b519b88170, type: 2}
+      check: 0
+    useItem: {fileID: 0}
+    dialogue:
+      sentences:
+      - Not here.
+    action:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &126969950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,6 +4422,8 @@ GameObject:
   - component: {fileID: 966998131}
   - component: {fileID: 966998130}
   - component: {fileID: 966998129}
+  - component: {fileID: 966998136}
+  - component: {fileID: 966998135}
   m_Layer: 5
   m_Name: Soap
   m_TagString: Untagged
@@ -4433,6 +4599,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966998127}
   m_CullTransparentMesh: 1
+--- !u!114 &966998135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966998127}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &966998136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966998127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &980419050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,6 +5087,8 @@ GameObject:
   - component: {fileID: 1176756228}
   - component: {fileID: 1176756229}
   - component: {fileID: 1176756230}
+  - component: {fileID: 1176756231}
+  - component: {fileID: 1176756232}
   m_Layer: 5
   m_Name: Sando
   m_TagString: Untagged
@@ -4961,6 +5164,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1176756227}
         m_TargetAssemblyTypeName: StateChanger, Assembly-CSharp
         m_MethodName: SetState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1176756228}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: OnExitHover
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5149,6 +5364,41 @@ MonoBehaviour:
         m_CallState: 2
   flagNameRef: sando/phase2/sewed
   flagChecks: []
+--- !u!114 &1176756231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176756220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1176756232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176756220}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1192940692
 GameObject:
   m_ObjectHideFlags: 0
@@ -5376,6 +5626,10 @@ GameObject:
   - component: {fileID: 1241191644}
   - component: {fileID: 1241191643}
   - component: {fileID: 1241191642}
+  - component: {fileID: 1241191648}
+  - component: {fileID: 1241191647}
+  - component: {fileID: 1241191646}
+  - component: {fileID: 1241191645}
   m_Layer: 5
   m_Name: Box3 Front
   m_TagString: Untagged
@@ -5459,6 +5713,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241191640}
   m_CullTransparentMesh: 1
+--- !u!114 &1241191645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241191640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue:
+    sentences:
+    - It's just a box.
+--- !u!114 &1241191646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241191640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - flagChecks:
+    - flag: sando/phase1
+      value: 1
+    itemChecks:
+    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
+      check: 0
+    - item: {fileID: 11400000, guid: b3ee6594d82cb5b4ab35f2b519b88170, type: 2}
+      check: 0
+    useItem: {fileID: 0}
+    dialogue:
+      sentences:
+      - Not here.
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1241191647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241191640}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1241191648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241191640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1287684254
 GameObject:
   m_ObjectHideFlags: 0
@@ -5490,7 +5822,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868853214}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6752,6 +7084,10 @@ GameObject:
   - component: {fileID: 1579623373}
   - component: {fileID: 1579623372}
   - component: {fileID: 1579623371}
+  - component: {fileID: 1579623376}
+  - component: {fileID: 1579623375}
+  - component: {fileID: 1579623374}
+  - component: {fileID: 1579623377}
   m_Layer: 5
   m_Name: Box5
   m_TagString: Untagged
@@ -6835,6 +7171,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579623369}
   m_CullTransparentMesh: 1
+--- !u!114 &1579623374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579623369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - flagChecks:
+    - flag: sando/phase1
+      value: 0
+    itemChecks:
+    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
+      check: 0
+    - item: {fileID: 11400000, guid: b3ee6594d82cb5b4ab35f2b519b88170, type: 2}
+      check: 0
+    useItem: {fileID: 0}
+    dialogue:
+      sentences:
+      - Nothing to see.
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1579623375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579623369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1579623376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579623369}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1579623377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579623369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue:
+    sentences:
+    - It's just a box...
 --- !u!1 &1610983865
 GameObject:
   m_ObjectHideFlags: 0
@@ -7098,7 +7512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1647022835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7598,6 +8012,8 @@ GameObject:
   - component: {fileID: 1708039522}
   - component: {fileID: 1708039521}
   - component: {fileID: 1708039520}
+  - component: {fileID: 1708039527}
+  - component: {fileID: 1708039526}
   m_Layer: 5
   m_Name: Box With Thread
   m_TagString: Untagged
@@ -7806,6 +8222,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708039518}
   m_CullTransparentMesh: 1
+--- !u!114 &1708039526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708039518}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1708039527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708039518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1714011593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8798,10 +9249,10 @@ RectTransform:
   m_Children:
   - {fileID: 2097375515}
   - {fileID: 883009669}
+  - {fileID: 1924645905}
   - {fileID: 1287684255}
   - {fileID: 2017699141}
   - {fileID: 118246766}
-  - {fileID: 1924645905}
   - {fileID: 1404164344}
   - {fileID: 1176756221}
   - {fileID: 966998128}
@@ -9171,6 +9622,10 @@ GameObject:
   - component: {fileID: 1924645908}
   - component: {fileID: 1924645907}
   - component: {fileID: 1924645906}
+  - component: {fileID: 1924645911}
+  - component: {fileID: 1924645910}
+  - component: {fileID: 1924645909}
+  - component: {fileID: 1924645912}
   m_Layer: 5
   m_Name: Box4
   m_TagString: Untagged
@@ -9190,11 +9645,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868853214}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -902.99976, y: -168}
+  m_AnchoredPosition: {x: -338, y: -168}
   m_SizeDelta: {x: 251, y: 208}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924645906
@@ -9254,6 +9709,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924645904}
   m_CullTransparentMesh: 1
+--- !u!114 &1924645909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924645904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90888ae3bce9bc34dbcc00b36c8da57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactions:
+  - flagChecks:
+    - flag: sando/phase1
+      value: 1
+    itemChecks:
+    - item: {fileID: 11400000, guid: 9dbf4922b89fa1c40912805675ca801a, type: 2}
+      check: 0
+    - item: {fileID: 11400000, guid: b3ee6594d82cb5b4ab35f2b519b88170, type: 2}
+      check: 0
+    useItem: {fileID: 0}
+    dialogue:
+      sentences:
+      - Nope.
+    action:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1924645910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924645904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e29d07923146824abeb1ea484bb1b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableHovering: 1
+  isHovering: 0
+  OnPointerEnterFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExitFunction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1924645911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924645904}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1924645912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924645904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397d437ea662914d8734e65d4fd010a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultDialogue:
+    sentences:
+    - Nothing's inside.
 --- !u!1 &1942219204
 GameObject:
   m_ObjectHideFlags: 0
@@ -9522,7 +10055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1991412535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9635,7 +10168,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868853214}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

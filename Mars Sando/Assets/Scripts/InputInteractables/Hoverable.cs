@@ -17,6 +17,9 @@ public class Hoverable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
 		OnPointerEnterFunction.Invoke(eventData);
 		isHovering = true;
+
+		if (gameObject.GetComponent<Interactable>() != null)		
+			gameObject.GetComponent<Interactable>().OnEnterHover();
 	}
 
 	public virtual void OnPointerExit(PointerEventData eventData) {
@@ -24,7 +27,10 @@ public class Hoverable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 			return;
 
 		OnPointerExitFunction.Invoke(eventData);
-		isHovering = false;    
+		isHovering = false;   
+
+		if (gameObject.GetComponent<Interactable>() != null)		
+			gameObject.GetComponent<Interactable>().OnExitHover(); 
 	}
 
 	public void SetHovering(bool value) {

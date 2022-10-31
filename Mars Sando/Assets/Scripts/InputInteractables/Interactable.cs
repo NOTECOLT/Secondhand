@@ -7,7 +7,16 @@ using UnityEngine.UI;
 public class Interactable : MonoBehaviour {
 	public List<Interaction> interactions;
 
-	// When arranging Interactions, put later-game interactions to the front
+	public void OnEnterHover() {
+		if (GetComponent<Outline>() != null)
+			GetComponent<Outline>().enabled = true;
+	}
+
+	public void OnExitHover() {
+		if (GetComponent<Outline>() != null)
+			GetComponent<Outline>().enabled = false;
+	}
+
 	public void OnClick() {
 		for (int i = 0; i < interactions.Count; i++) {
 			if (EventFlagManager.Instance.CheckFlags(interactions[i].flagChecks) &&
